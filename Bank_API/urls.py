@@ -15,11 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from rest_framework.urlpatterns import format_suffix_patterns
-from api import views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('banks/', views.BranchList.as_view())
+    path('', include('api.urls'))
 ]
